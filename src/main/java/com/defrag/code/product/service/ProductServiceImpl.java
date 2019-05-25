@@ -1,5 +1,6 @@
 package com.defrag.code.product.service;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -16,7 +17,7 @@ public class ProductServiceImpl implements ProductService {
 	private ProductDAO productDAO;
 
 	@Override
-	public ProductVO selectProductList(String productCode) throws Exception {
+	public List<ProductVO> selectProductList(String productCode) throws Exception {
 		return productDAO.selectProductList(productCode);
 	}
 

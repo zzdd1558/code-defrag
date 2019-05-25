@@ -2,20 +2,21 @@
 <mapper namespace="com.defrag.code.product"> 
 
 	<select id="selectProductList" parameterType="String" resultType="ProductVO">
-		<![CDATA[
-			SELECT PRODUCT_CODE
-				 , PRODUCT_TITLE
-				 , CATEGORY_CODE
-				 , HIT
-				 , USE_YN
-				 , DEL_YN
-				 , INSERT_ID
-				 , INSERT_DATE
-				 , MODIFY_ID
-				 , MODIFY_DATE
-			  FROM TPRODUCTM
-			 WHERE PRODUCT_CODE = #{productCode} 
-	 	]]>
+		SELECT PRODUCT_CODE
+			 , PRODUCT_TITLE
+			 , CATEGORY_CODE
+			 , HIT
+			 , USE_YN
+			 , DEL_YN
+			 , INSERT_ID
+			 , INSERT_DATE
+			 , MODIFY_ID
+			 , MODIFY_DATE
+		  FROM TPRODUCTM
+		 WHERE 1=1
+		   <if test=' productCode != "" and productCode != null '>
+		       AND PRODUCT_CODE = #{productCode}
+		   </if>
 	</select>
 	
 </mapper>

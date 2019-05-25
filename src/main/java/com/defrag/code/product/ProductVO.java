@@ -23,6 +23,7 @@ public class ProductVO {
 	private Date insertDate;			/* 생성일자 */
 	private String modifyId;			/* 수정자 */
 	private Date modifyDate;			/* 수정일자 */
+	
 	public String getProductCode() {
 		return productCode;
 	}

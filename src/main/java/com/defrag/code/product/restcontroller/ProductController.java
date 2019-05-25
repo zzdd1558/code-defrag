@@ -20,9 +20,13 @@ public class ProductController {
 	@Resource(name="productService")
 	private ProductService productSerivce;
 	
-	@RequestMapping(value = "/{productCode}", method = RequestMethod.GET)
-	public ProductVO home(@PathVariable String productCode) {
-		ProductVO product = null;
+	@RequestMapping(value = {"", "/{productCode}"}, method = RequestMethod.GET)
+	public List<ProductVO> home(@PathVariable(required=false) String productCode) {
+		List<ProductVO> product = null;
+		
+		if("".equals(productCode) || productCode==null){
+			System.out.println("null ¿‘¥œ¥Ÿ.");
+		}
 		
 		try {
 			product = productSerivce.selectProductList(productCode);

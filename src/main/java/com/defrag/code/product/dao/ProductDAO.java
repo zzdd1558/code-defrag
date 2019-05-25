@@ -11,8 +11,9 @@ import com.defrag.code.product.ProductVO;
 @Repository("productDAO")
 public class ProductDAO extends AbstractDAO {
 
-	public ProductVO selectProductList(String productCode) {
-		return (ProductVO)selectOne("com.defrag.code.product.selectProductList", productCode);
+	@SuppressWarnings("unchecked")
+	public List<ProductVO> selectProductList(String productCode) {
+		return (List<ProductVO>)selectList("com.defrag.code.product.selectProductList", productCode);
 	}
 	
 }
