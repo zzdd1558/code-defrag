@@ -9,12 +9,12 @@ import java.sql.Date;
  */
 public class ProductVO {
 	private String productCode;			/* 상품코드(pk) */
-	private String productCategory;		/* 카테고리 */
 	private String productTitle;		/* 타이틀 */
-	private String productContents;		/* 내용 > TPRODUCTDT */
-	private int productPrice;			/* 금액 > TPRODUCT_PRICE */
-	private String productGradeSeq;		/* 평가등급 시퀀스 > TPRODUCT_GRADE */
-	private String productReviewSeq;	/* 리뷰 시퀀스 > TPRODUCT_REVIEW */
+	private String categoryCode;		/* 카테고리 */
+//	private String productContents;		/* 내용 > TPRODUCTDT */
+//	private int productPrice;			/* 금액 > TPRODUCT_PRICE */
+//	private String productGradeSeq;		/* 평가등급 시퀀스 > TPRODUCT_GRADE */
+//	private String productReviewSeq;	/* 리뷰 시퀀스 > TPRODUCT_REVIEW */
 	private int hit;					/* 조회수 */
 	private int like;					/* 찜횟수 */
 	private String useYn;				/* 숨김여부 */
@@ -29,41 +29,17 @@ public class ProductVO {
 	public void setProductCode(String productCode) {
 		this.productCode = productCode;
 	}
-	public String getProductCategory() {
-		return productCategory;
-	}
-	public void setProductCategory(String productCategory) {
-		this.productCategory = productCategory;
-	}
 	public String getProductTitle() {
 		return productTitle;
 	}
 	public void setProductTitle(String productTitle) {
 		this.productTitle = productTitle;
 	}
-	public String getProductContents() {
-		return productContents;
+	public String getCategoryCode() {
+		return categoryCode;
 	}
-	public void setProductContents(String productContents) {
-		this.productContents = productContents;
-	}
-	public int getProductPrice() {
-		return productPrice;
-	}
-	public void setProductPrice(int productPrice) {
-		this.productPrice = productPrice;
-	}
-	public String getProductGradeSeq() {
-		return productGradeSeq;
-	}
-	public void setProductGradeSeq(String productGradeSeq) {
-		this.productGradeSeq = productGradeSeq;
-	}
-	public String getProductReviewSeq() {
-		return productReviewSeq;
-	}
-	public void setProductReviewSeq(String productReviewSeq) {
-		this.productReviewSeq = productReviewSeq;
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
 	}
 	public int getHit() {
 		return hit;
@@ -113,4 +89,7 @@ public class ProductVO {
 	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
+	
+	
+	
 }

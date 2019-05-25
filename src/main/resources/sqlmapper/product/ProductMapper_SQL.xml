@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- 맵핑될 DAO 인터페이스의 Full name 을 줍니다. -->
+<mapper namespace="com.defrag.code.product"> 
+
+	<select id="selectProductList" parameterType="String" resultType="ProductVO">
+		<![CDATA[
+			SELECT PRODUCT_CODE
+				 , PRODUCT_TITLE
+				 , CATEGORY_CODE
+				 , HIT
+				 , USE_YN
+				 , DEL_YN
+				 , INSERT_ID
+				 , INSERT_DATE
+				 , MODIFY_ID
+				 , MODIFY_DATE
+			  FROM TPRODUCTM
+			 WHERE PRODUCT_CODE = #{productCode} 
+	 	]]>
+	</select>
+	
+</mapper>
+
