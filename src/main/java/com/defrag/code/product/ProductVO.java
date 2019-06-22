@@ -3,26 +3,26 @@ package com.defrag.code.product;
 import java.sql.Date;
 
 /**
- * Å×ÀÌºí¸í : TPRODUCTM
- * ¿¬°ü Å×ÀÌºí : TPRODUCTDT, TPRODUCT_GRADE, TPRODUCT_REVIEW, TPRODUCT_PRICE
+ * ï¿½ï¿½ï¿½Ìºï¿½ï¿½ : TPRODUCTM
+ * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ : TPRODUCTDT, TPRODUCT_GRADE, TPRODUCT_REVIEW, TPRODUCT_PRICE
  * @author joon7
  */
 public class ProductVO {
-	private String productCode;			/* »óÇ°ÄÚµå(pk) */
-	private String productTitle;		/* Å¸ÀÌÆ² */
-	private String categoryCode;		/* Ä«Å×°í¸® */
-//	private String productContents;		/* ³»¿ë > TPRODUCTDT */
-//	private int productPrice;			/* ±Ý¾× > TPRODUCT_PRICE */
-//	private String productGradeSeq;		/* Æò°¡µî±Þ ½ÃÄö½º > TPRODUCT_GRADE */
-//	private String productReviewSeq;	/* ¸®ºä ½ÃÄö½º > TPRODUCT_REVIEW */
-	private int hit;					/* Á¶È¸¼ö */
-	private int like;					/* ÂòÈ½¼ö */
-	private String useYn;				/* ¼û±è¿©ºÎ */
-	private String delYn;				/* »èÁ¦¿©ºÎ */
-	private String insertId;			/* »ý¼ºÀÚ */
-	private Date insertDate;			/* »ý¼ºÀÏÀÚ */
-	private String modifyId;			/* ¼öÁ¤ÀÚ */
-	private Date modifyDate;			/* ¼öÁ¤ÀÏÀÚ */
+	private String productCode;			/*  */
+	private String productTitle;		/*  */
+	private String categoryCode;		/*  */
+//	private String productContents;		/*  */
+//	private int productPrice;			/*  */
+//	private String productGradeSeq;		/*  */
+//	private String productReviewSeq;	/*  */
+	private int hit;					/*  */
+	private int like;					/*  */
+	private String useYn;				/*  */
+	private String delYn;				/*  */
+	private String insertId;			/*  */
+	private Date insertDate;			/*  */
+	private String modifyId;			/*  */
+	private Date modifyDate;			/*  */
 	
 	public String getProductCode() {
 		return productCode;

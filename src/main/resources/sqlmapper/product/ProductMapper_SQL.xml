@@ -14,8 +14,8 @@
 			 , MODIFY_DATE
 		  FROM TPRODUCTM
 		 WHERE 1=1
-		   <if test=' productCode != "" and productCode != null '>
-		       AND PRODUCT_CODE = #{productCode}
+		   <if test=' value != "" and value != null '>
+		       AND PRODUCT_CODE = #{value}
 		   </if>
 	</select>
 	

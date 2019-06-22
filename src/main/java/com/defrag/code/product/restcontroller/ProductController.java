@@ -1,7 +1,6 @@
 package com.defrag.code.product.restcontroller;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -25,7 +24,7 @@ public class ProductController {
 		List<ProductVO> product = null;
 		
 		if("".equals(productCode) || productCode==null){
-			System.out.println("null ¿‘¥œ¥Ÿ.");
+			System.out.println("null.");
 		}
 		
 		try {
