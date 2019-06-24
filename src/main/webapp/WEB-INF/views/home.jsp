@@ -3,6 +3,8 @@
 <html>
 <head>
 	<title>Home</title>
+	
+	<script type="text/javascript" src="resources/utils/DateUtil.js"></script>
 </head>
 <body>
 <h1>
