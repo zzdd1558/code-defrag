@@ -12,8 +12,8 @@ import com.defrag.code.product.ProductVO;
 public class ProductDAO extends AbstractDAO {
 
 	@SuppressWarnings("unchecked")
-	public List<ProductVO> selectProductList(String productCode) {
-		return (List<ProductVO>)selectList("com.defrag.code.product.selectProductList", productCode);
+	public List<ProductVO> selectProductList(String categoryCode) {
+		return (List<ProductVO>)selectList("com.defrag.code.product.selectProductList", categoryCode);
 	}
 	
 }

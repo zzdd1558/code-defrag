@@ -17,8 +17,8 @@ public class ProductServiceImpl implements ProductService {
 	private ProductDAO productDAO;
 
 	@Override
-	public List<ProductVO> selectProductList(String productCode) throws Exception {
-		return productDAO.selectProductList(productCode);
+	public List<ProductVO> selectProductList(String categoryCode) throws Exception {
+		return productDAO.selectProductList(categoryCode);
 	}
 
 }

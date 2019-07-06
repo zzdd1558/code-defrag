@@ -13,22 +13,22 @@ import com.defrag.code.product.ProductVO;
 import com.defrag.code.product.service.ProductService;
 
 @RestController
-@RequestMapping("/category")
+@RequestMapping(value= {"/category"})
 public class ProductController {
 	
 	@Resource(name="productService")
 	private ProductService productSerivce;
 	
-	@RequestMapping(value = {"", "/{productCode}"}, method = RequestMethod.GET)
-	public List<ProductVO> home(@PathVariable(required=false) String productCode) {
+	@RequestMapping(value = {"", "/{categoryCode}"}, method = RequestMethod.GET)
+	public List<ProductVO> productList(@PathVariable(required=false) String categoryCode) {
 		List<ProductVO> product = null;
 		
-		if("".equals(productCode) || productCode==null){
-			System.out.println("null.");
+		if("".equals(categoryCode) || categoryCode==null){
+			System.out.println("/index/category - null.");
 		}
 		
 		try {
-			product = productSerivce.selectProductList(productCode);
+			product = productSerivce.selectProductList(categoryCode);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
