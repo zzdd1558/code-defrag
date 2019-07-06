@@ -1,6 +1,7 @@
 package com.defrag.code.product.restcontroller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -20,15 +21,28 @@ public class ProductController {
 	private ProductService productSerivce;
 	
 	@RequestMapping(value = {"", "/{categoryCode}"}, method = RequestMethod.GET)
-	public List<ProductVO> productList(@PathVariable(required=false) String categoryCode) {
+	public List<ProductVO> productList(@PathVariable(required=false) Map<String, Object> paramMap) {
 		List<ProductVO> product = null;
 		
-		if("".equals(categoryCode) || categoryCode==null){
-			System.out.println("/index/category - null.");
-		}
+		System.out.println(paramMap.toString());
 		
 		try {
-			product = productSerivce.selectProductList(categoryCode);
+			product = productSerivce.selectProductList(paramMap);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return product;
+	}
+	
+	@RequestMapping(value = {"/{categoryCode}/product/{productCode}"}, method = RequestMethod.GET)
+	public ProductVO productDetail(@PathVariable(required=true) Map<String, Object> paramMap) {
+		ProductVO product = null;
+		
+		System.out.println(paramMap.toString());
+		
+		try {
+			product = productSerivce.selectProductDetail(paramMap);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

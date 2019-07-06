@@ -17,8 +17,13 @@ public class ProductServiceImpl implements ProductService {
 	private ProductDAO productDAO;
 
 	@Override
-	public List<ProductVO> selectProductList(String categoryCode) throws Exception {
-		return productDAO.selectProductList(categoryCode);
+	public List<ProductVO> selectProductList(Map<String, Object> paramMap) throws Exception {
+		return productDAO.selectProductList(paramMap);
+	}
+
+	@Override
+	public ProductVO selectProductDetail(Map<String, Object> paramMap) {
+		return productDAO.selectProductDetail(paramMap);
 	}
 
 }

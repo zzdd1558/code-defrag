@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- 맵핑될 DAO 인터페이스의 Full name 을 줍니다. -->
 <mapper namespace="com.defrag.code.product"> 
 
-	<select id="selectProductList" parameterType="String" resultType="ProductVO">
+	<select id="selectProductList" parameterType="Map" resultType="ProductVO">
 		SELECT PRODUCT_CODE
 			 , PRODUCT_TITLE
 			 , CATEGORY_CODE
@@ -14,8 +14,20 @@
 			 , MODIFY_DATE
 		  FROM TPRODUCTM
 		 WHERE 1=1
-		   <if test=' value != "" and value != null '>
-		       AND CATEGORY_CODE = #{value}
+		   <if test=' categoryCode != "" and categoryCode != null '>
+		       AND CATEGORY_CODE = #{categoryCode}
+		   </if>
+	</select>
+	
+	<select id="selectProductDetail" parameterType="Map" resultType="ProductVO">
+		SELECT *
+		  FROM TPRODUCTM
+		 WHERE 1=1
+		   <if test=' categoryCode != "" and categoryCode != null '>
+		       AND CATEGORY_CODE = #{categoryCode}
+		   </if>
+		   <if test=' productCode != "" and productCode != null '>
+		       AND PRODUCT_CODE = #{productCode}
 		   </if>
 	</select>
 	
