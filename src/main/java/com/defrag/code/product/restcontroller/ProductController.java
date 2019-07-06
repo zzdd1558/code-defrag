@@ -35,7 +35,7 @@ public class ProductController {
 		return product;
 	}
 	
-	@RequestMapping(value = {"/{categoryCode}/product/{productCode}"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/product/{productCode}","/{categoryCode}/product/{productCode}"}, method = RequestMethod.GET)
 	public ProductVO productDetail(@PathVariable(required=true) Map<String, Object> paramMap) {
 		ProductVO product = null;
 		
