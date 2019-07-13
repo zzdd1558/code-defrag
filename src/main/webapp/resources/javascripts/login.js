@@ -1,3 +1,5 @@
+let dateUtil = new DateUtil();
+
 window.onload = () => {
 
     let userId = document.getElementById("userId");
@@ -6,16 +8,22 @@ window.onload = () => {
     let userName = document.getElementById("userName");
     let userYear = document.getElementById("userYear");
     let userMonth = document.getElementById("userMonth");
-    let userDay = document.getElementById("userDay");
+    let userDays = document.getElementById("userDay");
     let userPhone = document.getElementById("userPhone");
-    let Date = new DateUtil();
-    let {currYear , minYear} =  Date.getYear();
-
+    let {currYear , minYear} =  dateUtil.getYear();
+    let {currMonth , currDays} = dateUtil.getCurrentDate();
+    
     setYear(userYear ,currYear , minYear);
+    setDays(userDays , currMonth)
+    userYear.value = currYear;
+    userMonth.value = currMonth;
+    userDays.value = currDays
+    
+    
 
     userYear.addEventListener("change" , () => {
         userMonth.children[0].selected = true;
-        userDay.children[0].selected = true;
+        userDays.children[0].selected = true;
     });
 
     userMonth.addEventListener("change" , (e) => {
@@ -23,27 +31,36 @@ window.onload = () => {
         let {value} = e.target;
 
         if (selectYear > 0 && value > 0){
-            let days = Date.getDays(selectYear , value);
+            let days = dateUtil.getDays(selectYear , value);
 
-            let dayLength = userDay.options.length;
+            let dayLength = userDays.options.length;
             for(let i=1; i<dayLength; i++) {
-                userDay.options.remove(1);
+                userDays.options.remove(1);
             }
 
             for (let i = 0; i <=  days ; i++){
                 let option = optionsForm(i , i);
-                userDay.append(option);
+                userDays.append(option);
             }
         }
     })
 };
 
-let setYear = (selectObj , currYear , minYear) => {
+let setYear = (yearSelectBox , currYear , minYear) => {
     for (let i = currYear; i > minYear; i--) {
         let option = optionsForm(i , i);
-        selectObj.append(option);
+        yearSelectBox.append(option);
     }
 };
+
+let setDays = (monthSelectBox , currMonth) => {
+	let days = dateUtil.getDays(currMonth)
+	
+	for (let i = 1; i <= days; i++){
+		let option = optionsForm(i , i);
+		monthSelectBox.append(option)
+	}
+}
 
 let optionsForm = (text , value) => {
     let option = document.createElement("option");
