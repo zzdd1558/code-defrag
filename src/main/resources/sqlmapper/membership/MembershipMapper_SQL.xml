@@ -2,7 +2,7 @@
 <mapper namespace="com.defrag.code.membership"> 
 	
 	<insert id="insertMemberShip" parameterType="com.defrag.code.membership.JoinVO">
-		INSERT INTO tblJoin (seq, id, pw, nick, name, email, sex, tel) VALUES () 
+		INSERT INTO TB_MEMBERSHIP (id, pass, name, sex, phone, email, nickName) VALUES (#{id}, #{pass}, #{name}, #{sex}, #{phone}, #{email}, #{nickName}) 
 	</insert>
 	
 	<!-- <select id="selectProductList" parameterType="String" resultType="ProductVO">
