@@ -1,6 +1,6 @@
 package com.defrag.code.membership;
 
-public class SnsCodeVO {
+public class Sns_CodeVO {
 	private int seq;
 	private String snsCode;
 	private String snsName;

@@ -1,9 +1,8 @@
 package com.defrag.code.membership.service;
 
-import com.defrag.code.membership.JoinVO;
+import com.defrag.code.membership.MembershipVO;
 
 public interface MembershipService {
-	
-	//È¸¿ø°¡ÀÔ INSERT
-	int joinTrans(JoinVO joinvo);
+	//íšŒì›ê°€ì… INSERT
+	int membershipTrans(MembershipVO membershipvo);
 }
