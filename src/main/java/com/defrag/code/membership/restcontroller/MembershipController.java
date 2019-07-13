@@ -14,6 +14,7 @@ import com.defrag.code.product.service.ProductService;
 /**
  * Handles requests for the application home page.
  */
+
 @RestController
 @RequestMapping("/membership")
 public class MembershipController {
@@ -21,24 +22,22 @@ public class MembershipController {
 	@Resource(name="memberShipService")
 	private MembershipService memberShipService;
 	
-	//È¸¿ø°¡ÀÔ
-	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String join() {
-		String view ="È¸¿ø°¡ÀÔ";
-		
-		return view;
+		System.out.println("hello");
+		return "GET";
 	}
 	
 	/**
-	 * È¸¿ø°¡ÀÔ Á¤º¸ INSERT
+	 * È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ INSERT
 	 * @return
 	 */
-	@RequestMapping(value = "/joinTrans", method = RequestMethod.POST)
+	@RequestMapping(value = "", method = RequestMethod.POST)
 	public String joinTrans(JoinVO joinvo) {
 			
-		int result = memberShipService.joinTrans(joinvo);
+		//int result = memberShipService.joinTrans(joinvo);
 		
-		return "¼º°ø/½ÇÆÐ ÆäÀÌÁö";
+		return "POST";
 	}
 	
 }

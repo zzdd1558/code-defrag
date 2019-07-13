@@ -10,6 +10,9 @@ window.onload = () => {
     let userMonth = document.getElementById("userMonth");
     let userDays = document.getElementById("userDay");
     let userPhone = document.getElementById("userPhone");
+    let loginSubmit = document.getElementById("login-submit");
+    let loginReset = document.getElementById("login-reset");
+
     let {currYear , minYear} =  dateUtil.getYear();
     let {currMonth , currDays} = dateUtil.getCurrentDate();
     
@@ -17,7 +20,7 @@ window.onload = () => {
     setDays(userDays , currMonth)
     userYear.value = currYear;
     userMonth.value = currMonth;
-    userDays.value = currDays
+    userDays.value = currDays;
     
     
 
@@ -44,7 +47,18 @@ window.onload = () => {
             }
         }
     })
+
+    loginSubmit.addEventListener("click" ,formSubmit);
+    loginReset.addEventListener("click" , resetForm);
 };
+
+let formSubmit = (event) => {
+    event.preventDefault();
+};
+
+let resetForm = (event) => {
+	event.preventDefault();
+}
 
 let setYear = (yearSelectBox , currYear , minYear) => {
     for (let i = currYear; i > minYear; i--) {
@@ -54,7 +68,7 @@ let setYear = (yearSelectBox , currYear , minYear) => {
 };
 
 let setDays = (monthSelectBox , currMonth) => {
-	let days = dateUtil.getDays(currMonth)
+	let days = dateUtil.getDays(currMonth);
 	
 	for (let i = 1; i <= days; i++){
 		let option = optionsForm(i , i);

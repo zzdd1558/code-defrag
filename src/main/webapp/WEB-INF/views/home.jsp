@@ -60,8 +60,12 @@
                     </select>
                 </div>
                 <div>
-                    <span> <label userPhone="userPhone">휴대폰 번호 </label></span>
+                    <span> <label for="userPhone">휴대폰 번호 </label></span>
                     <input id='userPhone' type="text">
+                </div>
+                <div>
+                	<button id="login-submit">가입</button>
+                	<button id="login-reset">취소</button>
                 </div>
             </form>
         </div>
