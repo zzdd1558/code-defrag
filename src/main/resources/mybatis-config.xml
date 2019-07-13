@@ -12,6 +12,7 @@
 	<typeAliases>
 		<typeAlias alias="userVO" type="com.defrag.code.users.UserVO" />
 		<typeAlias alias="productVO" type="com.defrag.code.product.ProductVO" />
+		<typeAlias alias="memberShipVO" type="com.defrag.code.membership.MembershipVO" />
 	</typeAliases>
 </configuration>
 
