@@ -109,3 +109,4 @@ class DateUtil {
         return Object.assign(this.getCurrentDate(), this.getCurrentTime())
     }
 }
+

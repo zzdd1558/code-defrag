@@ -6,8 +6,6 @@
  * */
 class LoginRegex {
 
-    constructor (){}
-
     /**
      * @description id 검증 Regex
      *
@@ -17,7 +15,8 @@ class LoginRegex {
      * */
     isValidId(value){
 
-        let idReg = /^[a-zA-Z]+[a-zA-Z0-9-_]{4,10}$/;
+        // let idReg = /^[a-zA-Z]+[a-zA-Z0-9\_]{5,11}$/;
+        let idReg = /^[a-zA-Z][a-zA-Z0-9\_]{5,11}$/g;
         return this.isValid(idReg , value)
     }
 
@@ -35,7 +34,7 @@ class LoginRegex {
     }
 
     /**
-     * @description 대소문자 , 숫자 ,특수문자 !@#$%^&*()_+-= 까지만 포함되는 8 ~ 16 자리 비밀번호
+     * @description 대소문자, 숫자, 특수문자 !@#$%^&*()_+-= 까지만 포함되는 8 ~ 16 자리 비밀번호
      *
      * @param {String} password 값
      *
@@ -82,3 +81,15 @@ class LoginRegex {
     }
 }
 
+let LOGIN_MSG = (() => {
+
+    return (() => {
+        let MSG = {
+            "REQUIREED" : "필수 항목 입니다.",
+            "ID_MSG" : "영문자로 시작하는 6 ~ 12자리 아이디로 구성되어야합니다.",
+            "PASS_MSG" : "대소문자, 숫자, !@#$%^&*()_+-= 가 포함되는 8 ~ 16 자리 비밀번호",
+            "PASS_NOT_CONFIRM" : "비밀번호가 일치하지 않습니다."
+        };
+        return MSG;
+    })();
+})();

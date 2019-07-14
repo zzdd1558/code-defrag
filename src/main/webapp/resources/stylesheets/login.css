@@ -1,15 +1,20 @@
-* {margin:0;padding:0;}
-html , body { width: 100%; height: 100%;}
+*{margin:0;padding:0}
+input{border:none;border:solid 1px #ccc;border-radius:10px}
+button{border:none;border:solid 1px #ccc;border-radius:10px}
+input:focus{outline:0;border:2px solid green}
+body,html{width:100%;height:100%;}
+.wrap{height:100%}
+.wrap .content{height:100%}
 
+.content .login{position:relative;margin:0 auto;width:600px;height:70%;top:50%;transform:translateY(-50%)}
+.content .login #login-form{position:relative;margin:0 auto;border:1px solid #000;padding:10px;top:50%;transform:translateY(-50%)}
+.content .login #login-form div{margin:15px 10px}
+.content .login #login-form input[type=password],
+.content .login #login-form input[type=text]{width:97%;height:21px;margin:5px;font-size:15px;padding:5px;border-radius:5px;-webkit-appearance:none;-moz-appearance:none;appearance:none}
+.content .login #login-form .center {text-align:center;}
+.content .login #login-form button{width:49%;height:25px; background-color: white; border-radius : 5px; transition: background-color 1s;}
+.content .login #login-form button.positive:hover{cursor:pointer; background-color: #86B3DB;}
+.content .login #login-form button.negative:hover{cursor:pointer; background-color: #F8CCD7;}
+.content .login #login-form select{width:31%;height:25px;-ms-text-align-last:right;text-align-last:right;font-size:13px;margin:5px 4px; border-radius: 5px; }
+.content .login #login-form .errorMsg{color:red;margin:5px;font-size:13px;display:none}
 
-.wrap {height: 100%;}
-.wrap .content {height: 100%;}
-
-/* content */
-.content .login{position: relative; margin: 0 auto; width : 550px; height: 70%;top: 50%; transform: translateY(-50%);}
-.content .login #login-form { position:relative; margin: 0 auto; width: 70%;border: 1px solid black;}
-.content .login #login-form div { margin : 20px 10px;}
-.content .login #login-form input[type='text'] ,
-.content .login #login-form input[type='password'] { width: 98%; height: 20px;}
-.content .login #login-form button { width:49% }
-.content .login #login-form select { width:32%; height :20px; -ms-text-align-last: right; text-align-last: right;}
