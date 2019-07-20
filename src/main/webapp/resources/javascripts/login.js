@@ -7,9 +7,12 @@ window.onload = () => {
     let userPassword = document.getElementById("userPasswd");
     let userPasswordConfirm = document.getElementById("userPasswdConfirm");
     let userName = document.getElementById("userName");
+    let userNickname = document.getElementById("userNickname");
+    let userEmail = document.getElementById("userEmail");
     let userYear = document.getElementById("userYear");
     let userMonth = document.getElementById("userMonth");
     let userDays = document.getElementById("userDay");
+    let userSex = document.getElementById("userSex");
     let userPhone = document.getElementById("userPhone");
     let loginSubmit = document.getElementById("login-submit");
     let loginReset = document.getElementById("login-reset");
@@ -65,9 +68,9 @@ window.onload = () => {
             document.getElementById("fullBirth").value = fullBirth;
 
             // 서버 세팅후 전송
-            loginForm.action = "경로설정";
+            loginForm.action = "/membership/membershipTrans";
             loginForm.method = "POST";
-            //loginForm.submit();
+            loginForm.submit();
         }
     };
 

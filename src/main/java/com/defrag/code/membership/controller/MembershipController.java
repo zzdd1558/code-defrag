@@ -25,9 +25,7 @@ public class MembershipController {
 	 */
 	@RequestMapping(value = "/membershipJoin", method = RequestMethod.GET)
 	public String membership() {
-		String view ="회원가입";
-		
-		return view;
+		return "home";
 	}
 	
 	/**
@@ -40,7 +38,7 @@ public class MembershipController {
 		int result = memberShipService.membershipTrans(membershipvo);
 		
 		if(result == 1) {
-			return "성공";	
+			return "main";	
 		} else {
 			return "실패";
 		}

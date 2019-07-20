@@ -61,7 +61,7 @@ public class MembershipVO {
 	
 	@Override
 	public String toString() {
-		return "JoinVO [membership_idx=" + membership_idx + ", id=" + id + ", pass=" + pass + ", name=" + name
+		return "MembershipVO [membership_idx=" + membership_idx + ", id=" + id + ", pass=" + pass + ", name=" + name
 				+ ", sex=" + sex + ", phone=" + phone + ", email=" + email + ", nickName=" + nickName + "]";
 	}
 }

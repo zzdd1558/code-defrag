@@ -20,12 +20,12 @@
 	            <form id='login-form' autocomplete="off">
 	                <div>
 	                    <p ><label for="userId">아이디</label></p>
-	                    <input id='userId' type="text">
+	                    <input id='userId' type="text" name="id">
 	                    <span id="idMsg" class="errorMsg"></span>
 	                </div>
 	                <div>
 	                    <p><label for="userPasswd">비밀번호</label></p>
-	                    <input id='userPasswd' type="password">
+	                    <input id='userPasswd' type="password" name="pass">
 	                    <span id="passwordMsg" class="errorMsg"></span>
 	                </div>
 	                <div>
@@ -35,11 +35,21 @@
 	                </div>
 	                <div>
 	                    <p><label for="userName">이름</label></p>
-	                    <input id='userName' type="text">
+	                    <input id='userName' type="text" name="name">
 	                    <span id="nameMsg" class="errorMsg"></span>
 	                </div>
+	                <div>
+	                    <p><label for="userNickname">닉네임</label></p>
+	                    <input id='userNickname' type="text" name="nickName">
+	                    <span id="nicknameMsg" class="errorMsg"></span>
+	                </div>
+	                <div>
+	                    <p><label for="userEmail">이메일</label></p>
+	                    <input id='userEmail' type="text" name="email">
+	                    <span id="emailMsg" class="errorMsg"></span>
+	                </div>
 	                <div id="birth">
-	                    <p><label userPhone="userYear">생년 월일</label></p>
+	                    <p><label for="userYear">생년 월일</label></p>
 	                    <select name="year" id="userYear">
 	                        <option value= -1>년</option>
 	                    </select>
@@ -65,8 +75,15 @@
 	                    <input type="hidden" id="fullBirth" />
 	                </div>
 	                <div>
+	                	<p><label for="userSex">성별</label></p>
+	                    <select name="sex" id="userSex">
+	                        <option value="0" selected>남성</option>
+	                        <option value="1">여성</option>
+	                    </select>
+	                </div>
+	                <div>
 	                    <span> <label for="userPhone">휴대폰 번호 </label></span>
-	                    <input id='userPhone' type="text">
+	                    <input id='userPhone' type="text" name="phone">
 	                    <span id="phoneMsg" class="errorMsg"></span>
 	                </div>
 	                <div class="center">
