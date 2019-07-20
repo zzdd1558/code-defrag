@@ -14,13 +14,13 @@ import com.defrag.code.product.ProductVO;
 import com.defrag.code.product.service.ProductService;
 
 @RestController
-@RequestMapping(value= {"/category"})
+@RequestMapping(value= {"/search"})
 public class ProductController {
 	
 	@Resource(name="productService")
 	private ProductService productSerivce;
 	
-	@RequestMapping(value = {"", "/{categoryCode}"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"", "/", "/category/", "/category/{categoryCode}"}, method = RequestMethod.GET)
 	public List<ProductVO> productList(@PathVariable(required=false) Map<String, Object> paramMap) {
 		List<ProductVO> product = null;
 		
@@ -35,7 +35,7 @@ public class ProductController {
 		return product;
 	}
 	
-	@RequestMapping(value = {"/product/{productCode}","/{categoryCode}/product/{productCode}"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/product/{productCode}","/category/{categoryCode}/product/{productCode}"}, method = RequestMethod.GET)
 	public ProductVO productDetail(@PathVariable(required=true) Map<String, Object> paramMap) {
 		ProductVO product = null;
 		

@@ -12,7 +12,7 @@
 			 , INSERT_DATE
 			 , MODIFY_ID
 			 , MODIFY_DATE
-		  FROM TPRODUCTM
+		  FROM TB_PRODUCT
 		 WHERE 1=1
 		   <if test=' categoryCode != "" and categoryCode != null '>
 		       AND CATEGORY_CODE = #{categoryCode}
@@ -21,15 +21,17 @@
 	
 	<select id="selectProductDetail" parameterType="Map" resultType="ProductVO">
 		SELECT *
-		  FROM TPRODUCTM
+		  FROM TB_PRODUCT P
+		     , TB_PRODUCT_DETAIL PD
 		 WHERE 1=1
+		   AND AND P.PRODUCT_CODE = PD.PRODUCT_CODE
 		   <if test=' categoryCode != "" and categoryCode != null '>
-		       AND CATEGORY_CODE = #{categoryCode}
+		       AND P.CATEGORY_CODE = #{categoryCode}
 		   </if>
 		   <if test=' productCode != "" and productCode != null '>
-		       AND PRODUCT_CODE = #{productCode}
+		       AND P.PRODUCT_CODE = #{productCode}
 		   </if>
 	</select>
-	
+
 </mapper>
 
